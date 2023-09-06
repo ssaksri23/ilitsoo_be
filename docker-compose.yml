@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  mysqldb:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      TZ: Asia/Seoul
+      MYSQL_DATABASE: groom
+      MYSQL_ROOT_PASSWORD: groom
+      MYSQL_ROOT_HOST: "%"
+    volumes:
+      - ./backup:/var/lib/mysql
+    networks:
+      - default
+      - app-tier
+
+  backend:
+    container_name: backend
+    build:
+      context: ./
+    restart: always
+    depends_on:
+      - mysqldb
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/groom?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: groom
+    networks:
+      - default
+      - app-tier
+
+networks:
+  app-tier:
+    driver: bridge
