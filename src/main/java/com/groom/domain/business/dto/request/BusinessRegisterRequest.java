@@ -18,7 +18,7 @@ public class BusinessRegisterRequest {
     private Integer salary;
     private String businessDetail;
     private String address;
-    private Long latitude;
-    private Long longitude;
+    private Double latitude;
+    private Double longitude;
     private String recruitState;
 }

@@ -66,8 +66,10 @@ public class BusinessService {
         List<BusinessListResponse> response = new ArrayList<>();
         businesses.forEach(business ->
                 response.add(new BusinessListResponse(
+                        business.getId(),
                         business.getBusinessName(),
                         business.getPhoneNumber(),
+                        business.getBusinessType(),
                         business.getRecruitState(),
                         business.getLatitude(),
                         business.getLongitude(),
@@ -98,7 +100,9 @@ public class BusinessService {
                 business.getAddress(),
                 business.getLatitude(),
                 business.getLongitude(),
-                business.getRecruitState()
+                business.getRecruitState(),
+                ChronoUnit.DAYS.between(LocalDate.parse(business.getWorkStartDate()),
+                        LocalDate.parse(business.getWorkFinishDate()))
         );
         return response;
     }
@@ -112,9 +116,13 @@ public class BusinessService {
         List<MyBusinessListResponse> response = new ArrayList<>();
         businesses.forEach(business ->
                 response.add(new MyBusinessListResponse(
+                        business.getId(),
                         business.getBusinessName(),
+                        business.getBusinessType(),
                         business.getRecruitState(),
-                        business.getAddress()
+                        business.getAddress(),
+                        ChronoUnit.DAYS.between(LocalDate.parse(business.getWorkStartDate()),
+                                LocalDate.parse(business.getWorkFinishDate()))
                 )));
         return response;
     }

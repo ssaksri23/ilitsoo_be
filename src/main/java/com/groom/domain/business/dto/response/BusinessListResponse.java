@@ -8,11 +8,13 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class BusinessListResponse {
+    private Long businessId;
     private String businessName;
     private String phoneNumber;
     private String businessType;
-    private Long latitude;
-    private Long longitude;
+    private String recruitState;
+    private Double latitude;
+    private Double longitude;
     private String address;
     private Long totalWorkDate;
 }
