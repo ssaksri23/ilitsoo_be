@@ -1,4 +1,4 @@
-\![header](https://capsule-render.vercel.app/api?type=waving&color=0:FFC26F,100:FFC000)
+![header](https://capsule-render.vercel.app/api?type=waving&color=0:FFC26F,100:FFC000)
 
 ![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgoormthon&count_bg=%23F07A37&title_bg=%23787878&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)
 
