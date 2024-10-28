@@ -10,9 +10,9 @@ spring:
   datasource:
     hikari:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://mysqldb:3306/groom?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+      jdbc-url: jdbc:mysql://localhost:3306/groom?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
       username: root
-      password: groom
+      password: Na0202sun
 
   jpa:
     hibernate:
@@ -27,7 +27,6 @@ spring:
     path-match:
       matching-strategy: ant_path_matcher
 
-# Hibernate
 logging:
   level:
     com:
