@@ -6,6 +6,10 @@ build/
 !**/src/test/**/build/
 /backup
 
+## 실 서비스를 위해 민감 데이터가 담긴 프로덕션.yml 파일은 gitignore처리해주셔야 합니다.. 제가 따로 이그노어 처리 해두었습니다.
+## 현재 local.yml에도 db엔드포인트 및 jwt 설정 값들도 후에 gitignore처리하시길 바랍니다.
+application-production.yml
+
 ### STS ###
 .apt_generated
 .classpath
